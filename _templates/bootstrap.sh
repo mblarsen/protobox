@@ -29,7 +29,7 @@ if [ ! -d /vagrant ]; then
   NGINX_TEMPLATE=/tmp/nginx.conf
 fi
 TMP_FILE=`mktemp /tmp/nginx.conf.XXXXXXXXXX`
-sudo sed -e "s/_PROTOBOX_NAME/${PROTOBOX_NAME}/" "${NGINX_TEMPLATE}" > $TMP_FILE
+sudo sed -e "s/_PROTOBOX_DIR/${PROTOBOX_NAME}/" "${NGINX_TEMPLATE}" > $TMP_FILE
 sudo mv $TMP_FILE /etc/nginx/sites-available/default
 service nginx restart
 
