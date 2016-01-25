@@ -1,0 +1,13 @@
+{
+    "name": "mblarsen/protobox",
+    "description": "A preconfigured webserver and webframework for rapid prototyping",
+    "authors": [
+        {
+            "name": "Michael Bøcker-Larsen",
+            "email": "mblarsen@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    }
+}
