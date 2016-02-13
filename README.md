@@ -2,16 +2,19 @@
 
 A simple box for prototyping ideas. 
 
-* nginx
-* Slim 3.x / Laravel 5.1.x
-* mysql
+- nginx
+- Slim 3.x / Laravel 5.1.x
+- MySQL
 
 # How to use
-
-First prepare a repo on Github or Bitbuck. Have the URL ready e.g: git@bitbucket.org:mblarsen/protobox.git
 
 Run the install:
 
     ./install.sh
 
-You can just use the default values.
+Optionally you can have a repo ready and the install script will configure remotes.
+
+# TODO
+
+- [] Consider setting `user` and `group` in `/etc/php5/fpm/pool.d/www.conf` to `vagrant`
+- [] Configure `.env` file for Laravel and similar for Slim

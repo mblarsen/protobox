@@ -1,0 +1,7 @@
+# Example .protobox file. Can be used to skip questions during install
+PROTOBOX_NAME="myapp"
+PROTOBOX_BOX="ubuntu/trusty64"
+PROTOBOX_FRMW="laravel"
+PROTOBOX_PASS="secret"
+PROTOBOX_IP="85.85"
+PROTOBOX_GIT=""

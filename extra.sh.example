@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#
+# Copy this file to extra.sh to add your custom boostrapping
+#
+# The following vars is available:
+#
+# - $SERVER_ROOT - path to server
+# - $PROTOBOX_PASS - default password
+# - $PROTOBOX_NAME - name of box
+# - $PROTOBOX_ROOT - root of app (server + name)
+# - $PROTOBOX_FRAMEWORK - framwork used
+#
+# Tools available:
+#
+# - composer - installed globally
+#
+#
+# e.g:
+#
+# cd $PROTOBOX_ROOT
+# composer install league/oauth-server
+#
