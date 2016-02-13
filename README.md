@@ -16,5 +16,5 @@ Optionally you can have a repo ready and the install script will configure remot
 
 # TODO
 
-- [] Consider setting `user` and `group` in `/etc/php5/fpm/pool.d/www.conf` to `vagrant`
-- [] Configure `.env` file for Laravel and similar for Slim
+- [ ] Consider setting `user` and `group` in `/etc/php5/fpm/pool.d/www.conf` to `vagrant`
+- [ ] Configure `.env` file for Laravel and similar for Slim
