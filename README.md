@@ -2,9 +2,9 @@
 
 A simple box for prototyping ideas. 
 
-- nginx
-- Slim 3.x / Laravel 5.1.x
-- MySQL
+- nginx (setup as proxy)
+- Slim 3 (with Eloquent) / Laravel 5.x pre-configured
+- MySQL (with user and db created based on project)
 
 # How to use
 
@@ -18,5 +18,5 @@ Optionally you can have a repo ready and the install script will configure remot
 
 # TODO
 
-- [ ] Consider setting `user` and `group` in `/etc/php5/fpm/pool.d/www.conf` to `vagrant`
-- [ ] Configure `.env` file for Laravel and similar for Slim
+- [x] Consider setting `user` and `group` in `/etc/php5/fpm/pool.d/www.conf` to `vagrant`
+- [x] Configure `.env` file for Laravel and similar for Slim
