@@ -4,6 +4,8 @@
 echo "Configuring protobox"
 read -e -p "Project name [protobox]:" PROTOBOX_NAME
 PROTOBOX_NAME=${PROTOBOX_NAME:-protobox}
+read -e -p "Framework slim/laravel [slim]:" PROTOBOX_FRMW
+PROTOBOX_FRMW=${PROTOBOX_FRMW:-slim}
 read -s -p "Password [badedyr19]:" PROTOBOX_PASS
 echo
 PROTOBOX_PASS=${PROTOBOX_PASS:-badedyr19}
@@ -27,6 +29,7 @@ sedi "_PROTOBOX_IP" "${PROTOBOX_IP}" Vagrantfile
 sedi "_PROTOBOX_NAME" "${PROTOBOX_NAME}" Vagrantfile
 sedi "_PROTOBOX_NAME" "${PROTOBOX_NAME}" bootstrap.sh
 sedi "_PROTOBOX_PASS" "${PROTOBOX_PASS}" bootstrap.sh
+sedi "_PROTOBOX_FRMW" "${PROTOBOX_FRMW}" bootstrap.sh
 
 # Update git
 git remote rm origin &> /dev/null

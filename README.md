@@ -3,7 +3,7 @@
 A simple box for prototyping ideas. 
 
 * nginx
-* php/slim
+* Slim 3.x / Laravel 5.1.x
 * mysql
 
 # How to use

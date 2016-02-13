@@ -4,6 +4,7 @@ SERVER_ROOT="/srv/www"
 PROTOBOX_PASS='_PROTOBOX_PASS'
 PROTOBOX_NAME='_PROTOBOX_NAME'
 PROTOBOX_ROOT="${SERVER_ROOT}/${PROTOBOX_NAME}"
+PROTOBOX_FRAMEWORK="_PROTOBOX_FRMW"
 
 # Install nginx, php, mysql and git
 sudo apt-get -y install language-pack-en-base
@@ -38,11 +39,16 @@ curl -s https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
 # Run composer
-cd "${PROTOBOX_ROOT}"
 if [ -d "${PROTOBOX_ROOT}/public/index.php" ]; then
   composer install
 else
-  composer create-project slim/slim-skeleton .
-  cp /vagrant/_templates/composer.json .
+  if [ "$PROTOBOX_FRAMEWORK" == "slim" ]; then
+    cd "${PROTOBOX_ROOT}"
+    composer create-project slim/slim-skeleton .
+  elif [ "$PROTOBOX_FRAMEWORK" == "laravel" ]; then
+    cd "${SERVER_ROOT}"
+    composer create-project laravel/laravel "${PROTOBOX_NAME}" "5.1.*"
+  fi
+  # cp /vagrant/_templates/composer.json .
   composer update
 fi
