@@ -12,7 +12,8 @@ else
   read -e -p "Vagrant box [ubuntu/trusty64]:" PROTOBOX_BOX
   PROTOBOX_BOX=${PROTOBOX_BOX:-"ubuntu/trusty64"}
   if [ "$PROTOBOX_BOX" == "protobox-laravel" ]; then
-    PROTOBOX_FRMW="laravel"
+    read -e -p "Framework slim/laravel/none [laravel]:" PROTOBOX_FRMW
+    PROTOBOX_FRMW=${PROTOBOX_FRMW:-laravel}
   else
     read -e -p "Framework slim/laravel/none [slim]:" PROTOBOX_FRMW
     PROTOBOX_FRMW=${PROTOBOX_FRMW:-slim}
