@@ -25,12 +25,12 @@ else
   read -e -p "Git repo (optional):" PROTOBOX_GIT
 fi
 
-  # sed -i implementation since `-i` is not supported on Mac OSX
-  sedi() {
-    TMP_FILE=`mktemp /tmp/$3.XXXXXXXXXX`
-    sed -e "s/$1/$2/" $3 > $TMP_FILE
-    mv $TMP_FILE $3
-  }
+# sed -i implementation since `-i` is not supported on Mac OSX
+sedi() {
+  TMP_FILE=`mktemp /tmp/$3.XXXXXXXXXX`
+  sed -e "s~$1~$2~" $3 > $TMP_FILE
+  mv $TMP_FILE $3
+}
 
 # Prepares Vagrantfile + bootstrap.sh
 if [ ! -f Vagrantfile ]; then
@@ -54,7 +54,8 @@ sedi "_PROTOBOX_FRMW" "${PROTOBOX_FRMW}" bootstrap.sh
 git remote rm origin &> /dev/null
 git add Vagrantfile bootstrap.sh &> /dev/null
 git rm install.sh _templates/Vagrantfile _templates/bootstrap.sh &> /dev/null
-git commit -m"Configured vagrant box and removed install files"
+git commit -m"Configured vagrant box and removed install files" &> /dev/null
+echo "Configured vagrant box and removed install files"
 if [ ! -z "$PROTOBOX_GIT" ]; then
   git remote add -m master origin "$PROTOBOX_GIT" &> /dev/null
   git push -u origin --all
@@ -71,4 +72,4 @@ PROTOBOX_GIT="$PROTOBOX_GIT"
 EOT)
 echo "$_CONFIG" > "$PROTOBOX_CONFIG"
 
-echo "Now run: vagrant up"
+echo "Next: vagrant up"
