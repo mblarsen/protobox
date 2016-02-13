@@ -32,11 +32,14 @@ fi
 TMP_FILE=`mktemp /tmp/nginx.conf.XXXXXXXXXX`
 sudo sed -e "s/_PROTOBOX_DIR/${PROTOBOX_NAME}/" "${NGINX_TEMPLATE}" > $TMP_FILE
 sudo mv $TMP_FILE /etc/nginx/sites-available/default
-service nginx restart
 
 # Install composer
-curl -s https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
+if [ -f "/home/vagrant/composer.phar" ]; then
+  echo "Skipping composer, already installed"
+else
+  curl -s https://getcomposer.org/installer | php
+  mv composer.phar /usr/local/bin/composer
+fi
 
 # Run composer
 if [ -d "${PROTOBOX_ROOT}/public/index.php" ]; then
@@ -52,3 +55,4 @@ else
   # cp /vagrant/_templates/composer.json .
   composer update
 fi
+service nginx restart
