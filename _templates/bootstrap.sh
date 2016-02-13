@@ -14,13 +14,13 @@ if ! grep -q "$PHP_REPO" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
 fi
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get install -y nginx
+sudo apt-get install -y nginx git
 sudo apt-get install -y php5-cgi php5-common php5-json php5-gd php5-mcrypt php5-memcache php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-fpm
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $PROTOBOX_PASS"
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $PROTOBOX_PASS"
 sudo apt-get -y install mysql-server
 sudo apt-get -y install php5-mysql
-sudo apt-get -y install git
+sudo apt-get -y autoremove
 
 mysql -uroot "-p$PROTOBOX_PASS" -e "GRANT ALL PRIVILEGES ON *.* TO 'vagrant'@'localhost' identified by '$PROTOBOX_PASS'; FLUSH PRIVILEGES;"
 mysql -uroot "-p$PROTOBOX_PASS" -e "CREATE DATABASE IF NOT EXISTS \`$PROTOBOX_NAME\`\
