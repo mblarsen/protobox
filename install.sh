@@ -52,11 +52,11 @@ sedi "_PROTOBOX_FRMW" "${PROTOBOX_FRMW}" bootstrap.sh
 
 # Update git
 git remote rm origin &> /dev/null
-git add Vagrantfile bootstrap.sh
-git rm install.sh _templates/Vagrantfile _templates/bootstrap.sh
+git add Vagrantfile bootstrap.sh &> /dev/null
+git rm install.sh _templates/Vagrantfile _templates/bootstrap.sh &> /dev/null
 git commit -m"Configured vagrant box and removed install files"
 if [ ! -z "$PROTOBOX_GIT" ]; then
-  git remote add -m master origin "$PROTOBOX_GIT"
+  git remote add -m master origin "$PROTOBOX_GIT" &> /dev/null
   git push -u origin --all
 fi
 
