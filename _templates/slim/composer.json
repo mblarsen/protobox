@@ -14,5 +14,10 @@
         "slim/php-view": "^2.0",
         "monolog/monolog": "^1.17",
         "illuminate/database": "*"
+    },
+    "autoload": {
+       "psr-4": {
+           "": "src/Models"
+       } 
     }
 }

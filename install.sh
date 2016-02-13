@@ -3,7 +3,7 @@
 PROTOBOX_CONFIG=".protobox"
 # Get user data
 if [ -f $PROTOBOX_CONFIG ]; then
-  echo "protobox pre-configured"
+  echo "Protobox pre-configured"
   source $PROTOBOX_CONFIG
 else
   echo "Configuring protobox"
