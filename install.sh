@@ -44,6 +44,7 @@ if [ ! -f Vagrantfile ]; then
 fi
 
 sedi "_PROTOBOX_IP" "${PROTOBOX_IP}" Vagrantfile
+sedi "_PROTOBOX_BOX" "${PROTOBOX_BOX}" Vagrantfile
 sedi "_PROTOBOX_NAME" "${PROTOBOX_NAME}" Vagrantfile
 sedi "_PROTOBOX_NAME" "${PROTOBOX_NAME}" bootstrap.sh
 sedi "_PROTOBOX_PASS" "${PROTOBOX_PASS}" bootstrap.sh
