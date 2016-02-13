@@ -10,7 +10,7 @@ else
   read -e -p "Project name [protobox]:" PROTOBOX_NAME
   PROTOBOX_NAME=${PROTOBOX_NAME:-protobox}
   read -e -p "Vagrant box [ubuntu/trusty64]:" PROTOBOX_BOX
-  PROTOBOX_BOX=${PROTOBOX_BOX:-ubuntu/trusty64}
+  PROTOBOX_BOX=${PROTOBOX_BOX:-"ubuntu/trusty64"}
   if [ "$PROTOBOX_BOX" == "protobox-laravel" ]; then
     PROTOBOX_FRMW="laravel"
   else
